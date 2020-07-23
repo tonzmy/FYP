@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Object Detection using Machine Learning</h1>
+    <div class="row">
+      <div id="image-with-result" class="col-4">
+        <div class="row">
+          <div class="col">
+            <figure class="item">
+              <img id="img" src="static/black.png" width="352" height="288">
+              <figcaption class="location"></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr class="table-secondary">
+                <th scope="col"></th>
+                <th scope="col">Tiny YOLO V2</th>
+                <th scope="col">YOLO V2</th>
+                <th scope="col">YOLO V3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="car">
+                <th scope="row">No. of Cars</th>
+                <td class="tiny-yolov2-car"></td>
+                <td class="yolov2-car"></td>
+                <td class="yolov3-car"></td>
+              </tr>
+              <tr class="truck">
+                <th scope="row">No. of Trucks</th>
+                <td class="tiny-yolov2-truck"></td>
+                <td class="yolov2-truck"></td>
+                <td class="yolov3-truck"></td>
+              </tr>
+              <tr class="motorbike">
+                <th scope="row">No. of Motorbikes</th>
+                <td class="tiny-yolov2-motorbike"></td>
+                <td class="yolov2-motorbike"></td>
+                <td class="yolov3-motorbike"></td>
+              </tr>
+              <tr class="bus">
+                <th scope="row">No. of Buses</th>
+                <td class="tiny-yolov2-bus"></td>
+                <td class="yolov2-bus"></td>
+                <td class="yolov3-bus"></td>
+              </tr>
+              <tr>
+                <th scope="row">Result</th>
+                <td class="tiny-yolov2-level"></td>
+                <td class="yolov2-level"></td>
+                <td class="yolov3-level"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                澳門區
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="button-group">
+                <button class="image-button btn btn-outline-secondary" name="松山隧道羅理基方向" value="11">松山隧道羅理基方向</button>
+                <button class="image-button btn btn-outline-secondary" name="西灣湖景大馬路(向孫逸仙大馬路方向)" value="64">西灣湖景大馬路(向孫逸仙大馬路方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="羅理基博士大馬路行車隧道往松山隧道方向" value="61">羅理基博士大馬路行車隧道往松山隧道方向</button>
+                <button class="image-button btn btn-outline-secondary" name="殷皇子大馬路與約翰四世大馬路交界" value="63">殷皇子大馬路與約翰四世大馬路交界</button>
+                <button class="image-button btn btn-outline-secondary" name="殷皇子大馬路與葡京路交界" value="57">殷皇子大馬路與葡京路交界</button>
+                <button class="image-button btn btn-outline-secondary" name="亞馬喇前地巴士站" value="56">亞馬喇前地巴士站</button>
+                <button class="image-button btn btn-outline-secondary" name="亞馬喇前地之圓形地方向" value="55">亞馬喇前地之圓形地方向</button>
+                <button class="image-button btn btn-outline-secondary" name="西灣湖廣場(向孫逸仙大馬路)" value="54">西灣湖廣場(向孫逸仙大馬路)</button>
+                <button class="image-button btn btn-outline-secondary" name="孫逸仙大馬路(近終審法院前地)" value="53">孫逸仙大馬路(近終審法院前地)</button>
+                <button class="image-button btn btn-outline-secondary" name="西灣湖廣場(向西灣湖景大馬路)" value="51">西灣湖廣場(向西灣湖景大馬路)</button>
+                <button class="image-button btn btn-outline-secondary" name="河邊新街與鹽巷交界(向媽閣方向)" value="46">河邊新街與鹽巷交界(向媽閣方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="火船頭街(近11號碼頭)(向河邊新街方向)" value="47">火船頭街(近11號碼頭)(向河邊新街方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="比厘喇馬忌士街與貨倉巷交界(向十六浦方向)" value="45">比厘喇馬忌士街與貨倉巷交界(向十六浦方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="比厘喇馬忌士街與貨倉巷交界(向十六浦方向)" value="44">比厘喇馬忌士街與貨倉巷交界(向十六浦方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="南灣大馬路與殷皇子大馬路(向殷皇子大馬路方向)" value="43">南灣大馬路與殷皇子大馬路(向殷皇子大馬路方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="南灣大馬路與殷皇子大馬路(向八角亭方向)" value="42">南灣大馬路與殷皇子大馬路(向八角亭方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="火船頭街近11號碼頭(向巴素打爾古街方向)" value="41">火船頭街近11號碼頭(向巴素打爾古街方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="巴素打爾古街近栢港停車場出口(向火船頭街方向)" value="40">巴素打爾古街近栢港停車場出口(向火船頭街方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="河邊新街與比厘喇馬忌士街交界(向媽閣廟方向)" value="39">河邊新街與比厘喇馬忌士街交界(向媽閣廟方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="沙梨頭海邊街與魚鰓巷交界(向新馬路方向)" value="38">沙梨頭海邊街與魚鰓巷交界(向新馬路方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="南灣大馬路與區華利前地交界" value="35">南灣大馬路與區華利前地交界</button>
+                <button class="image-button btn btn-outline-secondary" name="東北大馬路與黑沙環中街交界向友誼圓形地方向" value="37">東北大馬路與黑沙環中街交界向友誼圓形地方向</button>
+                <button class="image-button btn btn-outline-secondary" name="新馬路(近議事亭前地)向南灣大馬路方向" value="36">新馬路(近議事亭前地)向南灣大馬路方向</button>
+                <button class="image-button btn btn-outline-secondary" name="新馬路與巴素打爾古街交界" value="30">新馬路與巴素打爾古街交界</button>
+                <button class="image-button btn btn-outline-secondary" name="松山隧道高士德方向" value="13">松山隧道高士德方向</button>
+                <button class="image-button btn btn-outline-secondary" name="提督馬路與高士德大馬路交界" value="29">提督馬路與高士德大馬路交界</button>
+                <button class="image-button btn btn-outline-secondary" name="美副將大馬路與士多鳥拜斯大馬路交界" value="28">美副將大馬路與士多鳥拜斯大馬路交界</button>
+                <button class="image-button btn btn-outline-secondary" name="亞馬喇前地" value="25">亞馬喇前地</button>
+                <button class="image-button btn btn-outline-secondary" name="馬場北大馬路" value="62">馬場北大馬路</button>
+                <button class="image-button btn btn-outline-secondary" name="外港客運碼頭A" value="7">外港客運碼頭A</button>
+                <button class="image-button btn btn-outline-secondary" name="外港客運碼頭B" value="8">外港客運碼頭B</button>
+                <button class="image-button btn btn-outline-secondary" name="殷皇子大馬路與南灣大馬路交界路口" value="1">殷皇子大馬路與南灣大馬路交界路口</button>
+                <button class="image-button btn btn-outline-secondary" name="水坑尾街與南灣大馬路交界路口" value="2">水坑尾街與南灣大馬路交界路口</button>
+                <button class="image-button btn btn-outline-secondary" name="美副將大馬路與士多鳥拜斯大馬路交界" value="28">美副將大馬路與士多鳥拜斯大馬路交界</button>
+                <button class="image-button btn btn-outline-secondary" name="美副將大馬路與士多鳥拜斯大馬路交界" value="28">美副將大馬路與士多鳥拜斯大馬路交界</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                路氹區
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <div class="button-group">
+                <button class="image-button btn btn-outline-secondary" name="東亞運圓形地(向西灣大橋入口)" value="52">東亞運圓形地(向西灣大橋入口)</button>
+                <button class="image-button btn btn-outline-secondary" name="路氹連貫公路圓形地" value="34">路氹連貫公路圓形地</button>
+                <button class="image-button btn btn-outline-secondary" name="東亞運大馬路往奧林匹克游泳館圓形地方向" value="33">東亞運大馬路往奧林匹克游泳館圓形地方向</button>
+                <button class="image-button btn btn-outline-secondary" name="東亞運街往東亞運大馬路方向" value="32">東亞運街往東亞運大馬路方向</button>
+                <button class="image-button btn btn-outline-secondary" name="北安圓形地" value="9">北安圓形地</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                跨海大橋
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <div class="button-group">
+                <button class="image-button btn btn-outline-secondary" name="西灣大橋下層隧道(向澳門方向)" value="50">西灣大橋下層隧道(向澳門方向)</button>
+                <button class="image-button btn btn-outline-secondary" name="友誼大橋近北安入口交匯處" value="6">友誼大橋近北安入口交匯處</button>
+                <button class="image-button btn btn-outline-secondary" name="友誼大橋近港澳碼頭出口交匯處" value="3">友誼大橋近港澳碼頭出口交匯處</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="static/script.js"></script>
+</body>
+
+</html>
+<!-- <div class="col">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col"></th>
+          <th scope="col">Tiny YOLO V2</th>
+          <th scope="col">YOLO V2</th>
+          <th scope="col">YOLO V3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="car">
+          <th scope="row">No. of Cars</th>
+          <td class="tiny-yolov2-car">Mark</td>
+          <td class="yolov2-car">Otto</td>
+          <td class="yolov3-car">@mdo</td>
+        </tr>
+        <tr class="truck">
+          <th scope="row">No. of trucks</th>
+          <td class="tiny-yolov2-truck">Jacob</td>
+          <td class="yolov2-truck">Thornton</td>
+          <td class="yolov3-truck">@fat</td>
+        </tr>
+        <tr class="motorbike">
+          <th scope="row">No. of Motorbikes</th>
+          <td class="tiny-yolov2-motorbike">Larry</td>
+          <td class="yolov2-motorbike">the Bird</td>
+          <td class="yolov3-motorbike">@twitter</td>
+        </tr>
+        <tr class="bus">
+          <th scope="row">No. of buses</th>
+          <td class="tiny-yolov2-bus">Larry</td>
+          <td class="yolov2-bus">the Bird</td>
+          <td class="yolov3-bus">@twitter</td>
+        </tr>
+        <tr>
+          <th scope="row">Result</th>
+          <td class="tiny-yolov2-Sit">Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+<!-- <div class="col result">
+  <p class="car">No. of Cars:</p>
+  <p class="truck">No. of trucks:</p>
+  <p class="motorbike">No. of Motorbikes:</p>
+  <p class="bus">No. of buses:</p>
+  <p class="">Situation:</p>
+</div> -->

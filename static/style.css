@@ -1,0 +1,59 @@
+button.btn-link {
+  font-size: 18px;
+}
+
+h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+div#image-with-result {
+  margin-bottom: 20px;
+  height: 330px;
+  max-height: 400px;
+  display: inline-block;
+  clear: right;
+}
+
+figure.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+}
+
+.location {
+  margin-top: 2%;
+  display: block;
+}
+
+div.result {
+
+  margin-left: 40px;
+}
+
+div.result p {
+  padding-top: 10px
+}
+
+div.col-sm-4 {
+  margin-top: 10%;
+}
+
+
+div#accordion {
+  width: 100%;
+}
+
+table tbody th {
+  width: 28%;
+}
+
+.button-group button {
+  width: 32%;
+  margin: 5px;
+  height: 60px;
+}
+
+table th, td{
+  text-align: center;
+}
